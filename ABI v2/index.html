@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABI - Boutique en ligne</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<script>
+const modal = document.getElementById("product-modal");
+const modalTitle = document.getElementById("modal-title");
+const modalDesc = document.getElementById("modal-desc");
+const modalPrice = document.getElementById("modal-price");
+const closeBtn = document.querySelector(".close-modal");
+
+document.querySelectorAll(".shoes-box").forEach(product => {
+    product.addEventListener("click", () => {
+        modalTitle.textContent = product.querySelector(".shoes-name").textContent;
+        modalPrice.textContent = product.querySelector(".shoes-price").textContent;
+        modalDesc.textContent = "Produit tendance, qualité premium, livraison rapide.";
+
+        modal.classList.add("active");
+    });
+});
+
+closeBtn.addEventListener("click", () => {
+    modal.classList.remove("active");
+});
+
+modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+        modal.classList.remove("active");
+    }
+});
+</script>
+
+<script src="js/script.js"></script>
+
+<div class="product-modal" id="product-modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2 id="modal-title"></h2>
+        <p id="modal-desc"></p>
+        <p id="modal-price" class="modal-price"></p>
+        <button class="add-to-cart">Ajouter au panier</button>
+    </div>
+</div>
+
+<body>
+
+<section class="top-page">
+    <header class="header">
+        <h1 class="logo">ABI</h1>
+
+        <nav class="nav">
+            <ul>
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#best-items">Meilleures ventes</a></li>
+                <li><a href="#all-clothes">Nos habits</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="landing-page">
+        <h2 class="big-title">Style in every stitch, fashion for every fit.</h2>
+        <a href="#services" class="scroll-down">Scroll ↓</a>
+    </div>
+</section>
+
+<section class="services" id="services">
+    <div class="service-item">
+        <i class="fas fa-store delivery-icon"></i>
+        <p>Notre magasin à votre service</p>
+    </div>
+    <div class="service-item">
+        <i class="fas fa-people-carry delivery-icon"></i>
+        <p>Retrait en point-relais</p>
+    </div>
+    <div class="service-item">
+        <i class="fas fa-truck delivery-icon"></i>
+        <p>Livraison à domicile sans contact</p>
+    </div>
+</section>
+
+<section class="best-items" id="best-items">
+    <h2 class="section-title">Nos meilleures ventes</h2>
+
+    <div class="best-shoes">
+        <div class="shoes-box shoes1">
+            <div class="shoes-details">
+                <p class="shoes-name">Air Force 1</p>
+                <p class="shoes-price">99,99 €</p>
+            </div>
+        </div>
+
+        <div class="shoes-box shoes2">
+            <div class="shoes-details">
+                <p class="shoes-name">Jordan 4</p>
+                <p class="shoes-price">159,99 €</p>
+            </div>
+        </div>
+
+        <div class="shoes-box shoes3">
+            <div class="shoes-details">
+                <p class="shoes-name">T-shirt PXP</p>
+                <p class="shoes-price">49,99 €</p>
+            </div>
+        </div>
+
+        <div class="shoes-box shoes4">
+            <div class="shoes-details">
+                <p class="shoes-name">Survêtement Nike</p>
+                <p class="shoes-price">29,99 €</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="all-clothes" id="all-clothes">
+    <h2 class="section-title">Nos habits</h2>
+
+    <div class="clothe-grid">
+        <div class="shoes-box clothe1">
+            <div class="shoes-details">
+                <p class="shoes-name">Pull PXP</p>
+                <p class="shoes-price">69,99 €</p>
+            </div>
+        </div>
+
+        <div class="shoes-box clothe2">
+            <div class="shoes-details">
+                <p class="shoes-name">Jean déchiré</p>
+                <p class="shoes-price">15,99 €</p>
+            </div>
+        </div>
+
+        <div class="shoes-box clothe3">
+            <div class="shoes-details">
+                <p class="shoes-name">Pull Nike Jordan</p>
+                <p class="shoes-price">55,99 €</p>
+            </div>
+        </div>
+
+        <div class="shoes-box clothe4">
+            <div class="shoes-details">
+                <p class="shoes-name">T-shirt TNF</p>
+                <p class="shoes-price">20,99 €</p>
+            </div>
+        </div>
+
+        <div class="shoes-box clothe5">
+            <div class="shoes-details">
+                <p class="shoes-name">Veste Bershka</p>
+                <p class="shoes-price">35,99 €</p>
+            </div>
+        </div>
+
+        <div class="shoes-box clothe6">
+            <div class="shoes-details">
+                <p class="shoes-name">Veste K-Way</p>
+                <p class="shoes-price">150,99 €</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
